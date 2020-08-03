@@ -20,21 +20,28 @@ func minEatingSpeed(piles []int, H int) int {
 		if low > hi {
 			break;
 		}
-	}
 	if canEatAllBanas(piles, H, low){
 		return low
 	}else{
 		low++
 	}
+}
 	return low
 }
 
-func canEatAllBanas(piles []int, H int, k int)bool {
+func canEatAllBanas(piles []int, H int, k int) bool{
 	// 算法
-	// 1. range piles  piles[i]/k向上取整数  Math.cell
+	// 1. range piles piles[i]/k向上取整 Math.ceil
 	// 2. 加起来
 	// 3. 是否小于等于H
-	return true
+	sumTime := 0.0
+	for i := 0; i < len(piles); i++ {
+		sumTime = math.Ceil(float64(piles[i])/float64(k)) + sumTime
+	}
+	if sumTime <= float64(H) {
+		return true
+	}
+	return false
 }
 
 func maxPiles(piles []int) int {
