@@ -1,16 +1,17 @@
 /**
-  * @param {number[]} nums
-  * @return {number}
-  */
- var removeDuplicates = function(nums) {
-  var j = 0;
-  var n = nums.length;
-  for(let i = 1;i<n;i++){
-      if(nums[i]!=nums[i-1]){
-          j++;
-          nums[j] = nums[i];
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function (nums, val) {
+  let len = 0;
+  for (item of nums) {
+      if (item !== val) {
+          // nums[len] = item;
+          len ++;
       }
   }
-  return j+1;
+  return  len;
+  
 };
-console.log(removeDuplicates([1,2,1,2,3]));
+console.log(removeElement([2,1,2,2,3,0,4,2],2));
