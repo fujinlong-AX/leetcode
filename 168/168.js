@@ -4,6 +4,7 @@
  */
 var convertToTitle = function(n) {
   let alp = {
+    0: 'Z',
     1: 'A',
     2: 'B',
     3: 'C',
@@ -29,14 +30,26 @@ var convertToTitle = function(n) {
     23: 'W',
     24: 'X',
     25: 'Y',
-    26: 'Z',
+    
   }
-  while(n > 26) {
-    s = n % 26
-    n = n / 26
-
+  let s = n
+  let str = ''
+  for (let i = 0; i < 10000; i++) {
+    let de = s % 26
+    // console.log(de);
+    s = parseInt(s / 26) 
+    str = alp[de] + str
+    // console.log(str);
+    if (s = 1 && n > 26) {
+      return 'A' + str
+    }
+    if (s < 1 ) {
+      return str
+    }
   }
 };
+// convertToTitle(827)
+console.log(convertToTitle(27));
 // /**
 //  * @param {number} n
 //  * @return {string}
