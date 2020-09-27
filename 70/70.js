@@ -1,28 +1,23 @@
-// /**
-//  * @param {number} n
-//  * @return {number}
-//  */
-// var climbStairs = function(n) {
-//   let arr = []
-//    arr[0] = 0
-//    arr[1] = 1
-//    arr[2] = 2
-//    for(let i = 3;i <= n;i++){
-//     arr[i] = arr[i-1] + arr[i-2]
-//    }
-//    return arr[n]
-// };
-// console.log(climbStairs(5));
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var climbStairs = function (n) {
+  let a = 1
+  let b = 2
+  let temp = 0
+  if (n == 1) {
+    return a
+  }
+  if (n == 2) {
+    return b
+  }
+  for (let i = 3; i <= n; i++) {
+     temp= a + b
+    a = b
+    b = temp
+  };
+  return temp
+}
 
-
-// 斐波那契思想
-// var climbStairs = function(n) {
-//   if(n == 1){
-//     return 1
-//   }else if(n ==2){
-//     return 2
-//   }else{
-//     return climbStairs(n-1) + climbStairs(n-2)
-//   }
-// };
-// console.log(climbStairs(5));
+console.log(climbStairs(4))
