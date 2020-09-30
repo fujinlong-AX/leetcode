@@ -1,0 +1,22 @@
+<!-- 协程 纤程 进程 线程 纤程 -->
+
+
+<script>
+  //async
+  function * gen() {
+    // await
+    yield 1
+    console.log(1);
+    yield 2
+    console.log(2);
+  }
+  function aa() {
+    console.log(1);
+    console.log(2);
+  }
+  // a() // 一条路走到黑
+  let it = gen()
+  it.next()
+  it.next()
+  it.next()
+</script>
