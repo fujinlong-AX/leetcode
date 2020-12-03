@@ -10,6 +10,7 @@ var sortArray = function(nums) {
       right.push(nums[i])
     }
   }
-  return sortArray(left).contact([base], sortArray(right))
+  return sortArray(left).contact([base], sortArray(right)) 
+  // return [...left, ...base, ...right]
 }
 console.log();

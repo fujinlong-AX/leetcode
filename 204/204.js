@@ -11,5 +11,7 @@ var countPrimes = function(n) {
       arr.push(n)
     }
   }
-  return arr.length
+  // return arr.length + 1
+  return arr
 };
+console.log(countPrimes(10));
